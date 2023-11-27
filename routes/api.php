@@ -22,7 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index');
-    Route::get('/users?name={name}&document={document}', 'index');
     Route::post('/users/create', 'store');
     Route::put('/users/update/{id}', 'update');
     Route::delete('/users/delete/{id}', 'destroy');
@@ -31,4 +30,5 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(AccountController::class)->group(function () {
     Route::get('/accounts/{email}', 'show');
     Route::post('/accounts/create/{email}', 'store');
+    Route::put('/accounts/upate/{email}', 'update');
 });
